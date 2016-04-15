@@ -1,0 +1,36 @@
+<head>
+  <title>Meteor Blog Project</title>
+</head>
+
+<body>
+  <div class="container">
+  	 <h1>Meteor Blog</h1>
+    {{#if currentUser }}
+  	<form class="new-blog">
+  		<input type="text" name="title" placeholder="New Blog Title">
+  		<input type="textarea" name="content" placeholder="New Blog Content"><br><br>
+  		<input type="submit" value="Submit">
+  	</form>	
+    {{/if}}
+  	<ul>
+  		{{#each blogs}}
+   			{{> blog}}
+  		{{/each}}
+  	</ul>
+    {{> loginButtons }}
+  </div>	
+</body>
+
+<template name="blog">
+ 	<li class="{{#if checked}} checked {{/if}}">
+    {{#if isOwner}}
+		<input type="checkbox" checked="{{checked}}" class="toggle-checked">
+    {{/if}}
+		<span class="text">{{ title }}</span>
+    {{#if isOwner}}
+    <button class="delete">Remove</button>
+    {{/if}}<br><br>
+		<span class="content">{{ content }} - Blogger "{{ blogger }}"</span><br>
+    <span class="created">{{ createdAt }}</span>
+	</li>
+ </template>
