@@ -2,7 +2,7 @@ Blogs = new Mongo.Collection ('blogs');
 
 if (Meteor.isClient) {
   Meteor.subscribe("blogs");
-  
+
   Template.body.helpers({
       blogs: function() {
         return Blogs.find();
@@ -50,7 +50,7 @@ if (Meteor.isServer) {
   });
 
   Meteor.publish("blogs", function(){
-       return Blogs.find();
+       return Blogs.find(); 
   });
 }
 
@@ -59,7 +59,7 @@ Meteor.methods({
     Blogs.insert({
             title: title, content: content,
             createdAt: new Date(), owner: Meteor.userId(),
-            blogger: Meteor.user().username
+            blogger: Meteor.user().username 
           });  
   },
   updateBlog: function(id,checked){
