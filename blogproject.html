@@ -4,7 +4,8 @@
 
 <body>
   <div class="container">
-  	 <h1>Meteor Blog</h1>
+    <span class="login">{{> loginButtons }}</span>
+  	<h1>Meteor Blog</h1>
     {{#if currentUser }}
   	<form class="new-blog">
   		<input type="text" name="title" placeholder="New Blog Title">
@@ -17,7 +18,6 @@
    			{{> blog}}
   		{{/each}}
   	</ul>
-    {{> loginButtons }}
   </div>	
 </body>
 

@@ -14,6 +14,7 @@ body {
 }
 
 .container {
+	position:relative;
 	max-width:800px;
 	margin: 0 auto;
 	min-height:100%;
@@ -86,7 +87,9 @@ input[type=checkbox]:checked + .content {
 } 
 
 .delete {
-	padding:5px;
+	position:absolute;
+	right:35px;
+	padding:10px;
 	border-radius: 10px;
 	background-color: red;
 	font-weight: bold;
@@ -100,4 +103,11 @@ input[type=checkbox]:checked + .content {
 
 .blogger {
 	color:#aaa;
+}
+
+.login {
+	position: absolute;
+	left:20px;
+	color:blue;
+	padding-bottom:25px;
 }
