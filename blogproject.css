@@ -88,10 +88,16 @@ input[type=checkbox]:checked + .content {
 .delete {
 	padding:5px;
 	border-radius: 10px;
-	background-color: orange;
+	background-color: red;
+	font-weight: bold;
+	color: white;
 }
 
 .created {
 	font-style: normal;
 	font-size: 9px;
+}
+
+.blogger {
+	color:#aaa;
 }
