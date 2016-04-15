@@ -1,6 +1,7 @@
 Blogs = new Mongo.Collection ('blogs');
 
 if (Meteor.isClient) {
+  Meteor.subscribe("blogs");
   
   Template.body.helpers({
       blogs: function() {
@@ -46,6 +47,10 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+  });
+
+  Meteor.publish("blogs", function(){
+       return Blogs.find();
   });
 }
 
