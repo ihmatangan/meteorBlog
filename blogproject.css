@@ -86,7 +86,7 @@ input[type=checkbox]:checked + .content {
   text-decoration: line-through;
 } 
 
-.delete {
+.delete { 
 	position:absolute;
 	right:35px;
 	padding:10px;
